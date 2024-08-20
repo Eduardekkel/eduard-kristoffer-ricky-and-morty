@@ -10,7 +10,7 @@ const pagination = document.querySelector('[data-js="pagination"]');
 
 // States
 const maxPage = 42;
-const page = 1;
+let page = 1;
 const searchQuery = "";
 
 import { createCharacterCard } from "./components/card/card.js";
@@ -53,6 +53,14 @@ fetchCharacters();
 // Update the pagination display each time characters are fetched to show the current page
 // index and the current max page index.
 
+function updatePagination() {
+  pagination.textContent = `${page} / ${maxPage}`;
+}
+
 nextButton.addEventListener("click", () => {
   console.log("button is clicked");
+  if (page < maxPage) {
+    page++;
+    updatePagination();
+  }
 });
