@@ -1,19 +1,21 @@
 .search-bar-container {
   width: 300px;
   padding: 20px;
+  margin-bottom: 30px;
 }
 
 .search-bar {
   padding: 10px 20px;
   /* background-color: var(--color-secondary); */
-  background-color: rgba(133, 86, 176, 0.37);
+  background-color: rgba(49, 43, 83, 0.58);
   display: grid;
   grid-template-columns: 1fr 24px;
   border-radius: 50px;
-  transition: transform 0.2s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  transition: transform 0.5s ease-in-out;
 }
 
-.search-bar:focus {
+.search-bar:hover {
   transform: scale(1.1);
 }
 

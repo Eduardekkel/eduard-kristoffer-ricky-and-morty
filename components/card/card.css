@@ -3,31 +3,39 @@
   flex-wrap: wrap;
   justify-content: space-around;
   margin-bottom: 10px;
-  gap: 20px;
+  gap: 30px;
 }
 .card {
   flex: 1 0 100px;
   max-width: 200px;
   width: 100%;
-  border-radius: 50px;
-  border: 2px solid var(--color-secondary);
-  background-color: var(--color-card);
+  border-top-left-radius: 230px;
+  border-top-right-radius: 230px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  background-color: rgba(145, 107, 128, 0.437);
 }
 
 .card__info {
   display: grid;
   grid-template-columns: auto 1fr;
   color: var(--color-secondary);
+  font-size: 10px;
 }
 .card__content {
+  color: var(--color-secondary);
+  text-transform: uppercase;
   padding: 10px 20px 20px;
   display: grid;
-  gap: 20px;
+  gap: 30px;
   max-width: 200px;
+  font-size: 14px;
 }
 
 .card__info-description {
   text-align: right;
+  font-size: 12px;
 }
 
 li {
@@ -35,18 +43,19 @@ li {
 }
 
 .card__image {
-  border-radius: 50px;
+  border-radius: 100%;
   max-width: 100%;
   height: auto;
+  border: 2px solid var(--color-secondary);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 760px) {
   .card-container {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 540px) {
   .card-container {
     grid-template-columns: 1fr;
   }
