@@ -1,8 +1,11 @@
 .card-container {
   margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 5px;
 }
 .card {
-  width: 300px;
+  width: 100%;
   background-color: var(--color-secondary);
 }
 
