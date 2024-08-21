@@ -1,4 +1,6 @@
 import { createCharacterCard } from "./components/card/card.js";
+import { createNextButton } from "./components/nav-button/nav-button.js";
+import { createPrevButton } from "./components/nav-button/nav-button.js";
 
 const cardContainer = document.querySelector('[data-js="card-container"]');
 const searchBarContainer = document.querySelector(
@@ -6,8 +8,8 @@ const searchBarContainer = document.querySelector(
 );
 const searchBar = document.querySelector('[data-js="search-bar"]');
 const navigation = document.querySelector('[data-js="navigation"]');
-const prevButton = document.querySelector('[data-js="button-prev"]');
-const nextButton = document.querySelector('[data-js="button-next"]');
+//const prevButton = document.querySelector('[data-js="button-prev"]');
+//const nextButton = document.querySelector('[data-js="button-next"]');
 const pagination = document.querySelector('[data-js="pagination"]');
 
 // States
@@ -59,6 +61,9 @@ fetchCharacters();
 function updatePagination() {
   pagination.textContent = `${page} / ${maxPage}`;
 }
+
+const prevButton = createPrevButton();
+const nextButton = createNextButton();
 
 // Event listener for the next button
 nextButton.addEventListener("click", () => {
