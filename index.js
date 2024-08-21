@@ -1,3 +1,5 @@
+import { createCharacterCard } from "./components/card/card.js";
+
 const cardContainer = document.querySelector('[data-js="card-container"]');
 const searchBarContainer = document.querySelector(
   '[data-js="search-bar-container"]'
@@ -9,25 +11,27 @@ const nextButton = document.querySelector('[data-js="button-next"]');
 const pagination = document.querySelector('[data-js="pagination"]');
 
 // States
-const maxPage = 42;
+let maxPage = 42;
 let page = 1;
 let searchQuery = "";
 
-import { createCharacterCard } from "./components/card/card.js";
-
+// Fetching Characters
 async function fetchCharacters() {
   try {
     cardContainer.innerHTML = "";
     const url = `https://rickandmortyapi.com/api/character/?page=${page}&name=${searchQuery}`;
     const response = await fetch(url);
-    console.log("response", response);
+    //console.log("response", response);
 
-    const responseJSON = await response.json(); //converting our response to JSON to gain access to the data we want
-    console.log("responseJSON", responseJSON); // console logging the actual data
+    //converting our response to JSON to gain access to the data we want
+    const responseJSON = await response.json();
+    // console.log("responseJSON", responseJSON);
 
+    // only show dataItems
     const dataItems = responseJSON.results;
-    console.log("dataItems", dataItems);
+    // console.log("dataItems", dataItems);
 
+    // Appending the data Items to the cards
     dataItems.forEach((dataItem) => {
       console.log("dataItem", dataItem);
       const cards = createCharacterCard(
@@ -39,24 +43,24 @@ async function fetchCharacters() {
       );
       cardContainer.append(cards);
     });
+
+    // updating the maxPage in case we search for characters by name
+    maxPage = responseJSON.info.pages;
+    updatePagination();
   } catch (error) {
     console.log("Sheeesh! Something wrong happened! - ", error);
   }
 }
 
+// calling the fetchCharacters function to show cards with fetched data items
 fetchCharacters();
 
-// Add an event listener on each of the next and prev buttons which do the following
-// - it is prevented that the page index could go higher than the max page index or below 1
-// - the page index is increased / decreased
-// - the fetchCharacters function is called
-// Update the pagination display each time characters are fetched to show the current page
-// index and the current max page index.
-
+// updating the pagination
 function updatePagination() {
   pagination.textContent = `${page} / ${maxPage}`;
 }
 
+// Event listener for the next button
 nextButton.addEventListener("click", () => {
   console.log("button is clicked");
   if (page < maxPage) {
@@ -66,6 +70,7 @@ nextButton.addEventListener("click", () => {
   }
 });
 
+// Event listener for the prev button
 prevButton.addEventListener("click", () => {
   console.log("button is clicked");
   if (page > 1) {
@@ -75,21 +80,12 @@ prevButton.addEventListener("click", () => {
   }
 });
 
+// search characters by name functionality
 searchBar.addEventListener("submit", (event) => {
   event.preventDefault();
   searchQuery = searchBar.querySelector("input").value;
-  console.log("search:", searchQuery);
+  //console.log("search:", searchQuery);
+  page = 1;
+  updatePagination();
   fetchCharacters();
 });
-
-/* Now we want even more functionality in our app. 
-We want to find individual characters by typing their name into the search bar.
-
-- Create a 'submit' event listener on the search bar.
-- Update the state variable searchQuery with the current text 
-  inside the search bar every time this event is triggered.
-- Modify the fetch URL again by adding another url encoded attribute name: 
-  append &name=<searchQuery> to the url. If the search query is an empty string, 
-  it will be ignored by the API, so don't worry about that.
-- Now trigger the function fetchCharacters whenever a submit event happens.
-*/

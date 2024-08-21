@@ -1,12 +1,5 @@
-// const imageSrc = "CHANGE"
-// const altValue = "CHANGE"
-// const nameCharacter = "CHANGE"
-// const statusType = "CHANGE"
-// const typeValue = "CHANGE"
-// const occurrencesValue = "CHANGE"
-
 export function createCharacterCard(image, name, status, type, occurrences) {
-  console.log(
+  /*console.log(
     "Parameters Create Character Card, ",
     "\nimage",
     image,
@@ -18,7 +11,7 @@ export function createCharacterCard(image, name, status, type, occurrences) {
     type,
     "\noccurrences",
     occurrences
-  );
+  );*/
   const dynamicCards = document.createElement("li");
   dynamicCards.classList.add("card-container");
   dynamicCards.innerHTML = `
@@ -48,5 +41,3 @@ export function createCharacterCard(image, name, status, type, occurrences) {
     `;
   return dynamicCards;
 }
-
-// document.body.innerHTML += dynamicCards - nicht vergessen zu appenden falls das nicht woanders passiert
