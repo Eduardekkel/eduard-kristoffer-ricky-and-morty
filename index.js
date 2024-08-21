@@ -11,14 +11,14 @@ const pagination = document.querySelector('[data-js="pagination"]');
 // States
 const maxPage = 42;
 let page = 1;
-const searchQuery = "";
+let searchQuery = "";
 
 import { createCharacterCard } from "./components/card/card.js";
 
 async function fetchCharacters() {
   try {
     cardContainer.innerHTML = "";
-    const url = `https://rickandmortyapi.com/api/character/?page=${page}`;
+    const url = `https://rickandmortyapi.com/api/character/?page=${page}&name=${searchQuery}`;
     const response = await fetch(url);
     console.log("response", response);
 
@@ -74,3 +74,22 @@ prevButton.addEventListener("click", () => {
     fetchCharacters();
   }
 });
+
+searchBar.addEventListener("submit", (event) => {
+  event.preventDefault();
+  searchQuery = searchBar.querySelector("input").value;
+  console.log("search:", searchQuery);
+  fetchCharacters();
+});
+
+/* Now we want even more functionality in our app. 
+We want to find individual characters by typing their name into the search bar.
+
+- Create a 'submit' event listener on the search bar.
+- Update the state variable searchQuery with the current text 
+  inside the search bar every time this event is triggered.
+- Modify the fetch URL again by adding another url encoded attribute name: 
+  append &name=<searchQuery> to the url. If the search query is an empty string, 
+  it will be ignored by the API, so don't worry about that.
+- Now trigger the function fetchCharacters whenever a submit event happens.
+*/
