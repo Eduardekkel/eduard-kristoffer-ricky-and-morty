@@ -4,10 +4,9 @@
 @import "components/nav-pagination/nav-pagination.css";
 
 @font-face {
-  font-family: "RickAndMortyFont";
-  src: url(fonts/WubbaLubbaDubDub.ttf) format(truetype);
-  font-weight: normal;
-  font-style: normal;
+  font-family: "Get Schwifty";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/3089507/get-schwifty.woff")
+    format("woff");
 }
 
 * {
@@ -18,7 +17,10 @@
 
 :root {
   --color-primary: rgb(51, 51, 51);
-  --color-secondary: #f6f6f6;
+  --color-secondary: rgb(235, 230, 227);
+  --color-title: #8f29cf;
+  --color-outline: #f6f6f6;
+  --color-card: #b76bedae;
   --font-family: "Cabin", sans-serif;
 }
 
@@ -32,13 +34,20 @@ body {
 main {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 
 .title {
-  padding: 10px 0;
-  color: white;
-  font-family: "RickAndMortyFont", sans-serif;
+  margin: 5px;
+  padding: 15px;
+  bottom: 0.8em;
+  width: 100%;
+  text-align: center;
+  font-family: "Get Schwifty";
+  font-size: 40px;
+  color: var(--color-title);
+
   /* display: flex;
   flex-direction: default;
   justify-content: center; */

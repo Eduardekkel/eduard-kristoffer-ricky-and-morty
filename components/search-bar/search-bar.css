@@ -1,18 +1,27 @@
 .search-bar-container {
   width: 300px;
+  padding: 20px;
 }
 
 .search-bar {
   padding: 10px 20px;
-  background-color: var(--color-secondary);
+  /* background-color: var(--color-secondary); */
+  background-color: rgba(133, 86, 176, 0.37);
   display: grid;
   grid-template-columns: 1fr 24px;
+  border-radius: 50px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.search-bar:focus {
+  transform: scale(1.1);
 }
 
 .search-bar__input {
   background-color: transparent;
   border: none;
-  color: var(--color-primary);
+  color: var(--color-card);
+  /* color: var(--color-primary); */
 }
 
 .search-bar__button {

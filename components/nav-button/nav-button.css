@@ -1,7 +1,31 @@
-.button {
-  border: none;
+.navigation {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  display: flex;
+  justify-content: center;
 }
 
-.button:hover {
+.button--prev {
+  background-color: var(--color-title);
+  font-family: var(--font-family);
+  font-weight: 100;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+}
+
+.button--next {
+  background-color: var(--color-title);
+  font-family: var(--font-family);
+  font-weight: 100;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+}
+
+.button--prev:hover,
+.button--next:hover {
   background-color: var(--color-secondary);
+  border: none;
+  transition: 0.2s ease-in;
+  transform: scale(1.2);
 }

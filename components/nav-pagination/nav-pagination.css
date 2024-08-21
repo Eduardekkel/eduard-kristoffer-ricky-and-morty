@@ -5,7 +5,10 @@
 }
 
 .navigation__pagination {
-  display: grid;
-  place-items: center;
-  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  /* grid-template-columns: 1fr; */
+  /* place-items: center; */
+  color: var(--color-secondary);
 }

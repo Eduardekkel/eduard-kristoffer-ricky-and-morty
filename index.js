@@ -62,12 +62,12 @@ async function fetchCharacters() {
 fetchCharacters();
 
 const prevButton = createPrevButton();
-const nextButton = createNextButton();
 const pagination = createPagination();
+const nextButton = createNextButton();
 
 // updating the pagination
 function updatePagination() {
-  pagination.textContent = `${page} / ${maxPage}`;
+  pagination.textContent = `${page} | ${maxPage}`;
 }
 
 // Event listener for the next button
