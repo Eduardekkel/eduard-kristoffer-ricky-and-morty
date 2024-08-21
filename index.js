@@ -62,5 +62,15 @@ nextButton.addEventListener("click", () => {
   if (page < maxPage) {
     page++;
     updatePagination();
+    fetchCharacters();
+  }
+});
+
+prevButton.addEventListener("click", () => {
+  console.log("button is clicked");
+  if (page > 1) {
+    page--;
+    updatePagination();
+    fetchCharacters();
   }
 });
