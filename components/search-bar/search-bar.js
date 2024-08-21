@@ -23,7 +23,7 @@ export function createSearchBar() {
 
   const searchIcon = document.createElement("img");
   searchIcon.classList.add("search-bar__icon");
-  searchIcon.src = "./assets/magnifying-glass.png";
+  searchIcon.src = "./assets/portal-gun-rick-and-morty.png";
   searchIcon.alt = "";
   searchButton.appendChild(searchIcon);
 

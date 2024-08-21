@@ -1,13 +1,13 @@
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center; /*von space-around auf center geändert */
   margin-bottom: 10px;
-  gap: 30px;
+  gap: 50px; /*von 30px auf 50px geändert */
 }
 .card {
   flex: 1 0 100px;
-  max-width: 200px;
+  max-width: 220px; /*von 200px auf 220px geändert */
   width: 100%;
   border-top-left-radius: 230px;
   border-top-right-radius: 230px;
@@ -19,23 +19,38 @@
 
 .card__info {
   display: grid;
+  text-align: left;
   grid-template-columns: auto 1fr;
   color: var(--color-secondary);
   font-size: 10px;
 }
+
+.card__title {
+  font-size: 18px;
+  text-align: center;
+  margin: 5px;
+  margin-top: 0.1px;
+  padding: 5px;
+}
+
 .card__content {
-  color: var(--color-secondary);
+  /*color: var(--color-secondary);
   text-transform: uppercase;
   padding: 10px 20px 20px;
   display: grid;
-  gap: 30px;
+  gap: 20px;
   max-width: 200px;
+  font-size: 14px;*/
+  color: var(--color-secondary);
+  padding: 10px 20px 20px;
+  display: grid;
+  gap: 20px;
   font-size: 14px;
 }
 
 .card__info-description {
   text-align: right;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 li {
@@ -62,6 +77,6 @@ li {
 }
 
 .card:hover {
-  transition: 0.2s ease-in;
-  transform: scale(1.1);
+  transition: 60ms ease-out; /*von ease-in zu ease-out geändert - ist irgendwie smoother wenn man schnell mit dem cursor rüberwischt */
+  transform: scale(1.15); /* von 1.1 auf 1.15 geändert*/
 }

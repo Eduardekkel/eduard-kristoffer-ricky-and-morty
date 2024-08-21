@@ -32,6 +32,6 @@
 .button--next:hover {
   background-color: var(--color-secondary);
   border: none;
-  transition: 0.2s ease-in;
-  transform: scale(1.2);
+  transition: 60ms ease-in; /*von 0.2s auf 60ms geändert */
+  transform: scale(1.15); /*von 1.2 auf 1.15 geändert */
 }

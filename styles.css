@@ -28,7 +28,7 @@ body {
   font-family: var(--font-family);
   color: var(--color-primary);
   padding: 20px;
-  background-image: url(assets/Large\ jpeg_Universe_Bkg_1_D.jpg);
+  background-image: url(assets/galaxywallpaper3.jpg);
 }
 
 main {
@@ -46,14 +46,24 @@ main {
   width: 100%;
   text-align: center;
   font-family: "Get Schwifty";
-  font-size: 60px;
+  font-size: 70px;
   color: var(--color-title);
   text-shadow: 0.02em 0.02em 0.02em greenyellow,
     -0.02em -0.02em 0.02em greenyellow, 0 0 0.2em greenyellow;
+}
 
-  /* display: flex;
-  flex-direction: default;
-  justify-content: center; */
+.footer {
+  margin: 5px;
+  margin-top: 30px;
+  padding: 15px;
+  bottom: 0.8em;
+  width: 100%;
+  text-align: center;
+  font-family: "Get Schwifty";
+  font-size: 25px;
+  color: var(--color-title);
+  text-shadow: 0.02em 0.02em 0.02em greenyellow,
+    -0.02em -0.02em 0.02em greenyellow, 0 0 0.2em greenyellow;
 }
 
 /* @media (min-width: 600px) {
