@@ -33,7 +33,7 @@ async function fetchCharacters() {
 
     // Appending the data Items to the cards
     dataItems.forEach((dataItem) => {
-      console.log("dataItem", dataItem);
+      //console.log("dataItem", dataItem);
       const cards = createCharacterCard(
         dataItem.image,
         dataItem.name,
