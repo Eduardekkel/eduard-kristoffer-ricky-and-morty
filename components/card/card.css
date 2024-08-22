@@ -14,7 +14,8 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 
-  background-color: rgba(145, 107, 128, 0.437);
+  /* background-color: rgba(107, 113, 145, 0.437); */
+  background-color: #8133c171;
 }
 
 .card__info {
@@ -22,7 +23,7 @@
   text-align: left;
   grid-template-columns: auto 1fr;
   color: var(--color-secondary);
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .card__title {
@@ -36,6 +37,7 @@
 .card__content {
   /*color: var(--color-secondary);
   text-transform: uppercase;
+  
   padding: 10px 20px 20px;
   display: grid;
   gap: 20px;
@@ -50,7 +52,7 @@
 
 .card__info-description {
   text-align: right;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 li {
@@ -79,4 +81,6 @@ li {
 .card:hover {
   transition: 60ms ease-out; /*von ease-in zu ease-out geändert - ist irgendwie smoother wenn man schnell mit dem cursor rüberwischt */
   transform: scale(1.15); /* von 1.1 auf 1.15 geändert*/
+  background-color: rgba(153, 205, 50, 0.759);
+  box-shadow: 0 5px 10px rgba(153, 205, 50, 0.521);
 }

@@ -7,7 +7,7 @@
 }
 
 .button--prev {
-  background-color: var(--color-title);
+  background-color: var(--color-card);
   font-family: var(--font-family);
 
   width: 100%;
@@ -18,7 +18,7 @@
 }
 
 .button--next {
-  background-color: var(--color-title);
+  background-color: var(--color-card);
   font-family: var(--font-family);
   font-weight: 100;
   width: 100%;

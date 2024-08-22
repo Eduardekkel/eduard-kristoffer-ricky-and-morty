@@ -7,7 +7,12 @@
 .search-bar {
   padding: 10px 20px;
   /* background-color: var(--color-secondary); */
-  background-color: rgba(49, 43, 83, 0.58);
+  /* background-color: rgba(49, 43, 83, 0.58); */
+  background-image: linear-gradient(
+    to right,
+    rgba(129, 31, 195, 0),
+    rgba(43, 255, 0, 0.315)
+  );
   display: grid;
   grid-template-columns: 1fr 24px;
   border-radius: 50px;
@@ -37,6 +42,11 @@
 }
 
 .search-bar__icon {
-  width: 20px;
+  width: 70px;
+  position: absolute;
+  margin-top: -35px;
+  margin-left: -20px;
+  /* height: 50px; */
+
   /* filter: invert(); */
 }
